@@ -1,0 +1,60 @@
+
+  <form name="form" (ngSubmit)="f.form.valid && onSubmit()"  #f="ngForm" novalidate>
+    <mat-form-field appearance="standard">
+      <mat-label>Titulo del Libro</mat-label>
+      <input matInput name="title" [(ngModel)]="book.title" #title="ngModel" required />
+      <!--<mat-error *ngIf="title.errors">Required</mat-error>-->
+    </mat-form-field>
+  <mat-form-field>
+    <textarea matInput name="description" placeholder="Descripcion del Libro" [(ngModel)]="book.description" [cdkTextareaAutosize] required></textarea>
+  </mat-form-field>
+    File: <input type="file" name="image" (change)="onSelectedFile($event)" required>
+  <mat-form-field>
+    <mat-label>Categoria</mat-label>
+    <mat-select name="category" [formControl]="categoryControl" required>
+      <mat-option>--</mat-option>
+      <mat-option *ngFor="let categoryTemp of categories" [value]="categoryTemp" (click)="getCategorySelected(categoryTemp)">
+        {{categoryTemp}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="categoryControl.hasError('required')">Por favro elige una Categoria</mat-error>
+  </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Autor del Libro</mat-label>
+      <input matInput name="author" [(ngModel)]="book.author" required>
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Edicion de Libro</mat-label>
+      <input matInput name="edition" [(ngModel)]="book.edition" required>
+    </mat-form-field>
+      <mat-form-field appearance="standard">
+      <mat-label>Editorial</mat-label>
+      <input matInput name="publisher" [(ngModel)]="book.publisher" required>
+    </mat-form-field>
+    <mat-form-field appearance="standard">
+      <mat-label>Imagen del libro</mat-label>
+      <input matInput name="image" [(ngModel)]="book.image">
+    </mat-form-field>
+<table class="max-width"><tr>
+  <td><mat-form-field appearance="standard">
+    <mat-label>Numero de Paginas</mat-label>
+    <input type="number" matInput name="pages" [(ngModel)]="book.numberOfPages" required>
+  </mat-form-field>
+  </td>
+  <td>
+  <mat-form-field appearance="standard">
+    <mat-label>Idioma</mat-label>
+    <input matInput name="language" [(ngModel)]="book.language" required>
+  </mat-form-field>
+  </td>
+  <td>
+    <mat-form-field appearance="standard">
+      <mat-label>Codigo de libro</mat-label>
+      <input type="number" matInput name="isbn" [(ngModel)]="book.isbn" required>
+    </mat-form-field>
+  </td>
+</tr>
+</table>
+  <br>
+  <button mat-raised-button>Agregar Libro</button>
+  </form>

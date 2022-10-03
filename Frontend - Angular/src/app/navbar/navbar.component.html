@@ -1,0 +1,39 @@
+<mat-toolbar class="nav-container">
+  <button mat-button routerLink="/">Home</button>
+
+  <div *ngIf="role=='Student'">
+  <button mat-button routerLink="/student/owned">Mis Libros</button>
+  <button mat-button [matMenuTriggerFor]="menu">Categorias</button>
+  <mat-menu #menu="matMenu"> <div *ngFor="let c of category">
+    <button mat-menu-item [routerLink]="['/book/category/', c]">{{c}}</button>
+  </div>
+  </mat-menu>
+
+
+  </div>
+
+  <div *ngIf="role=='Librarian'">
+    <button mat-button routerLink="/librarian/book/add">Cargar Libro</button>
+    <button mat-button routerLink="/librarian/addBookItem">Cargar Copia</button>
+    <button mat-button routerLink="/librarian/transaction/issue">Prestamos</button>
+    <button mat-button routerLink="/librarian/transaction/return">Devoluciones</button>
+    <button mat-button [matMenuTriggerFor]="menu" >Categorias</button>
+    <mat-menu #menu="matMenu"> <div *ngFor="let c of category">
+      <button mat-menu-item [routerLink]="['/book/category/', c]">{{c}}</button>
+    </div>
+    </mat-menu>
+
+
+  </div>
+    <div *ngIf="role=='Librarian'; else else_content" class="logout-librarian-container">
+
+      <button mat-button (click)="logout()">Salir</button>
+    </div>
+
+  <ng-template #else_content>
+    <div class="logout-student-container">
+    <button mat-button (click)="logout()">Salir</button>
+    </div>
+  </ng-template>
+
+  </mat-toolbar>

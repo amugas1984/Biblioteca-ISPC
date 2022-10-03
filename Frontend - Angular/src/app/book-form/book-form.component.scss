@@ -1,0 +1,12 @@
+form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 5%;
+}
+.max-width{
+  max-width: 80%;
+}
+form > * {
+  width: 100%;
+}

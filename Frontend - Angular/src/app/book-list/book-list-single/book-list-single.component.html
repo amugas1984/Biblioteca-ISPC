@@ -1,0 +1,11 @@
+<br><br>
+<div class="book-container">
+  <img mat-card-image [src]=_DomSanitizerService.bypassSecurityTrustUrl(this.path+this.book.image)>
+  <mat-card-title [routerLink]="['/book', book.isbn]">{{book.title}} <br> <mat-card-subtitle> de {{book.author}}</mat-card-subtitle></mat-card-title>
+  <div class="three">{{this.book.category}} </div>
+  <mat-card *ngIf="this.book.available ; else elseBlock" style="color:green;">
+    <div *ngIf="this.numberOfBooksAvailable>1">{{this.numberOfBooksAvailable}} copias disponibles</div>
+    <div *ngIf="this.numberOfBooksAvailable==1">{{this.numberOfBooksAvailable}} copia disponible</div>
+  </mat-card>
+  <ng-template #elseBlock><mat-card style="color: red">No hay copias disponibles</mat-card></ng-template>
+</div>

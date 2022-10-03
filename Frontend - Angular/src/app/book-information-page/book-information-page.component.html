@@ -1,0 +1,25 @@
+<br><br><br>
+<div class="book-information-container">
+  <img mat-card-image [src]=this.path+this.book.image>
+  <div class="select">
+    <div *ngIf="this.book.available ; else elseBlock" style="color:green;">
+      <div *ngIf="this.numberOfBooksAvailable>1">{{this.numberOfBooksAvailable}} copias disponibles</div>
+      <div *ngIf="this.numberOfBooksAvailable==1">{{this.numberOfBooksAvailable}} copa disponible</div>
+    </div>
+    <ng-template #elseBlock><div style="color: red">No hay Copias disponibles</div></ng-template>
+    <p><span>Categoria : {{this.book.category}}</span> </p>
+  </div>
+
+  <div class="book-information">
+    <mat-card-title>{{this.book?.title}}</mat-card-title>
+    <p><mat-card-subtitle>de {{this.book?.author}}</mat-card-subtitle></p>
+  <div class="book-description">
+{{this.book?.description}}
+  </div>
+    <br> 
+    <div class="details">
+    <mat-card-content>{{this.book?.publisher}}</mat-card-content><br>
+    <mat-card-content>Codigo del Libro: {{this.book?.isbn}} </mat-card-content>
+    </div>
+  </div>
+</div>

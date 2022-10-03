@@ -1,0 +1,8 @@
+<br><br>
+<div class="book-owned-container">
+
+  <img mat-card-image [src]=_DomSanitizerService.bypassSecurityTrustUrl(this.path+this.transaction.bookItem.book.image)>
+  <mat-card-title [routerLink]="['/book', transaction.bookItem.book.isbn]"> {{transaction.bookItem.book.title}} <br> <mat-card-subtitle> de {{transaction.bookItem.book.author}}</mat-card-subtitle></mat-card-title>
+  <div class="three"> {{transaction.dateOfIssue | date: "mediumDate"}} </div>
+  <div class="four">A DEVOLVER EL:   {{transaction.returnDate | date: "mediumDate"}}</div>
+</div>

@@ -1,0 +1,19 @@
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <mat-form-field class="example-full-width">
+           <input matInput placeholder="Usuario" formControlName="username" >
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Password" formControlName="password" [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+         <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+        <br><br>
+         <button mat-raised-button >
+          <span *ngIf="loading">Cargando...</span>
+           <span *ngIf="!loading"> Ingresa a Mi Biblioteca -> iLiB </span>
+          </button>
+     </div>
+  </form>

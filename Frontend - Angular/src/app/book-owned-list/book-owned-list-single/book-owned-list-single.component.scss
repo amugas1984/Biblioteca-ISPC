@@ -1,0 +1,31 @@
+.book-owned-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-owned-container mat-card-title{
+  order: 2;
+}
+
+mat-card-title:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.book-owned-container .three{
+  padding-right: 2%;
+  order: 3;
+}
+
+.book-owned-container .four{
+  order: 4;
+}
+
+.book-owned-container img{
+  width: 10%;
+  height: 20%;
+  padding-left: 2%;
+  padding-right: 5%;
+  order: 1;
+}

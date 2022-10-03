@@ -1,0 +1,39 @@
+.book-information-container{
+  font-family: "Merriweather",serif;
+}
+.book-information-container img{
+  position: absolute;
+  width: 30%;
+  height: 60%;
+  padding-left: 2%;
+}
+
+p span
+{
+  display: block;
+  padding-left: 0%;
+  white-space: pre;
+}
+
+.book-information-container .book-information{
+  width: 50%;
+  padding-left: 38%;
+  line-height: 1.5;
+}
+
+.book-information-container .book-information .book-description{
+  font-size: 18px;
+}
+
+.book-information-container .book-information .details {
+  font-size: 12px;
+  color: gray;
+  line-height: 2;
+
+}
+.book-information-container .select{
+  position: absolute;
+  padding-top: 38%;
+  width: 25%;
+  padding-left: 3%;
+}

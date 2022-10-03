@@ -1,0 +1,31 @@
+.book-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-container mat-card-title {
+  order: 2;
+  }
+
+mat-card-title:hover{
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+.three{
+  order: 3;
+  padding-bottom: 4%;
+}
+
+.book-container mat-card{
+  order: 4;
+  margin-bottom: 4%;
+}
+.book-container img{
+  width: 10%;
+  height: 20%;
+  padding-left: 2%;
+  padding-right: 10%;
+  order: 1;
+}

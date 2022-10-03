@@ -1,0 +1,11 @@
+<div class="information-box-container">
+<app-information-box-single #studentInfoBox [objectInput]="'Student'"></app-information-box-single>
+<app-information-box-single #bookItemInfoBox [objectInput]="'BookItem'"></app-information-box-single>
+  <div *ngIf="this.action=='issue'" class="button">
+    <button mat-stroked-button (click)="issueBook(studentInfoBox.object,bookItemInfoBox.object)">Prestar Libro</button>
+  </div>
+  <div *ngIf="this.action=='return'" class="button">
+    <button mat-stroked-button (click)="returnBook(studentInfoBox.object,bookItemInfoBox.object)">Devolver Libro</button>
+  </div>
+</div>
+
